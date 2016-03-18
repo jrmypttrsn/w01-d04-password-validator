@@ -29,3 +29,16 @@ end
 def at_least_one_number?(password)
 	password.include?("0..9")	
 end
+
+def includes_phrase_password?(password)
+	password.include?("password")
+	password.include?("Password")
+	password.include?("pAssword")
+	password.include?("paSsword")
+	password.include?("pasSword")
+	password.include?("passWord")
+	password.include?("passwOrd")
+	password.include?("passwoRd")
+	password.include?("passworD")
+	password.include?("PASSWORD")
+end
