@@ -39,7 +39,11 @@ class PasswordValidatorTest < Minitest::Test
     refute(result, "'1Abjilsa should be invalid because it does not contain non-alphanumeric characters")
   end
 
-  #
+  #Testing a password with no numbers
+  def test_rejects_password_with_no_numbers
+    result = at_least_one_number?("Abjils&a")
+    refute(result, "'Abjils&a' should be invalid because it contains no numbers")
+  end
 
 
 ###########################################################

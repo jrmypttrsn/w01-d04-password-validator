@@ -25,3 +25,7 @@ end
 def at_least_one_na_character?(password)
 	password.include?("\W")
 end
+
+def at_least_one_number?(password)
+	password.include?("0..9")	
+end
