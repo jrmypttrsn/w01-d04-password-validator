@@ -27,11 +27,6 @@ class PasswordValidatorTest < Minitest::Test
     refute(result, "'1ABils&' has 8 characters, should be valid")
   end
 
-  def test_valid_password
-    result = valid_password?("1Abils&a")
-    assert(result, "'1Abils&a' should be valid")
-  end
-
   #Testing a password with all upper case letters
   def test_rejects_all_upper_case_passwords
     result = at_least_one_lower_case?("1ABJILS&A")
@@ -45,4 +40,13 @@ class PasswordValidatorTest < Minitest::Test
   end
 
   #
+
+
+###########################################################
+  def test_valid_password
+    result = valid_password?("1Abils&a")
+    assert(result, "'1Abils&a' should be valid")
+  end
+
+ 
 end
