@@ -1,9 +1,20 @@
 require "pry"
 
+# 
+# 
+# 
+# 
+# 
+# 
+# 
+
 def valid_password?(password)
   at_least_one_caps?(password) && 
   at_least_eight_characters?(password) &&
-  at_least_one_lower_case?(password)
+  at_least_one_lower_case?(password) &&
+  at_least_one_na_character?(password) &&
+  at_least_one_number? &&
+  includes_phrase_password?
 end
 
 # Takes a string
