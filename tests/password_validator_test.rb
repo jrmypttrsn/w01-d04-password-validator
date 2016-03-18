@@ -43,6 +43,12 @@ class PasswordValidatorTest < Minitest::Test
   def test_rejects_password_with_no_numbers
     result = at_least_one_number?("Abjils&a")
     refute(result, "'Abjils&a' should be invalid because it contains no numbers")
+  end 
+
+  #Testing a password that contains 'password'
+  def test_rejects_password_containing_password
+    result = includes_phrase_password?("1Password&")
+    refute(result, "'1Password&' should be invalid because it contains the word 'password'")
   end
 
 
