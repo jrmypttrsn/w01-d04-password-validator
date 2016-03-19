@@ -53,9 +53,9 @@ class PasswordValidatorTest < Minitest::Test
 
 
 ###########################################################
-  def test_valid_password
-    result = valid_password?("1Abils&a")
-    assert(result, "'1Abils&a' should be valid")
+  def test_accepts_valid_password
+    result = valid_password?("1Abjils&A")
+    assert(result, "'1Abjils&A' should be valid becuase if follows all the password requirements")
   end
 
  

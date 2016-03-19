@@ -1,10 +1,10 @@
 require "pry"
 
+# Runs all methods to verify a password
 # 
+# password - a string representing the password that will be verified
 # 
-# 
-# 
-# 
+# returns true if password meets all requirements, otherwise returns false
 # 
 # 
 
@@ -13,8 +13,8 @@ def valid_password?(password)
   at_least_eight_characters?(password) &&
   at_least_one_lower_case?(password) &&
   at_least_one_na_character?(password) &&
-  at_least_one_number? &&
-  includes_phrase_password?
+  at_least_one_number?(password) &&
+  includes_phrase_password?(password)
 end
 
 # Takes a string
@@ -34,22 +34,16 @@ end
 
 #'na' means non-alphanumeric
 def at_least_one_na_character?(password)
-	password.include?("\W")
+	characters = password.gsub(/[A-Za-z0-9]/,"")
+  characters.length != 0
 end
 
 def at_least_one_number?(password)
-	password.include?("0..9")	
+	password = password.include?("0..9")	
 end
 
 def includes_phrase_password?(password)
-	password.include?("password")
-	password.include?("Password")
-	password.include?("pAssword")
-	password.include?("paSsword")
-	password.include?("pasSword")
-	password.include?("passWord")
-	password.include?("passwOrd")
-	password.include?("passwoRd")
-	password.include?("passworD")
-	password.include?("PASSWORD")
+	!password.downcase.include?("password")
 end
+
+#valid_password?("1Abjils&A")
