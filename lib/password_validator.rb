@@ -2,11 +2,10 @@ require "pry"
 
 # Runs all methods to verify a password
 # 
-# password - a string representing the password that will be verified
+# password = a string of letters, numbers and 
+# special characters representing the password that will be verified
 # 
 # returns true if password meets all requirements, otherwise returns false
-# 
-# 
 
 def valid_password?(password)
   at_least_one_caps?(password) && 
@@ -17,9 +16,6 @@ def valid_password?(password)
   includes_phrase_password?(password)
 end
 
-# Takes a string
-# Returns true or false depending on if the string has at least one capital
-# letter
 def at_least_one_caps?(password)
   password != password.downcase
 end
@@ -45,5 +41,3 @@ end
 def includes_phrase_password?(password)
 	!password.downcase.include?("password")
 end
-
-#valid_password?("1Abjils&A")
